@@ -8,3 +8,8 @@ RUN wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/SHA256SUMS.asc
 RUN wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/bitcoin-0.21.0-x86_64-linux-gnu.tar.gz
 RUN chmod 755 setup.sh
 RUN ["chmod", "+x", "setup.sh"]
+RUN ["tar", "-xf", "bitcoin-0.21.0-x86_64-linux-gnu.tar.gz"]
+RUN ls -ltra
+RUN ./setup.sh
+ENTRYPOINT bitcoind 
+CMD -daemon
