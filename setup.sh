@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sha256sum bitcoin-0.21.0-aarch64-linux-gnu.tar.gz >> sum
+sha256sum bitcoin-0.21.0-x86_64-linux-gnu.tar.gz >> sum
 echo "downloaded sha256sum: " && cat sum
-echo "correct sha256sum: " && grep bitcoin-0.21.0-aarch64-linux-gnu.tar.gz SHA256SUMS.asc
-tar -xf bitcoin-0.21.0-aarch64-linux-gnu.tar.gz
+echo "correct sha256sum: " && grep bitcoin-0.21.0-x86_64-linux-gnu.tar.gz SHA256SUMS.asc
+tar -xf bitcoin-0.21.0-x86_64-linux-gnu.tar.gz
