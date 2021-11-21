@@ -1,10 +1,10 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:18.04
 RUN apt-get update
-RUN apt-get intall -y git curl wget
-CMD ["wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/SHA256SUMS.asc"]
-CMD ["wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/bitcoin-0.21.0-aarch64-linux-gnu.tar.gz"]
-
-CMD sha256sum https://bitcoincore.org/bin/bitcoin-core-0.21.0/SHA256SUMS.asc >> sum
-CMD echo "downloaded sha256sum: " && cat sum
-CMD echo "correct sha256sum: " && grep bitcoin-0.21.0-aarch64-linux-gnu.tar.gz.1 SHA256SUMS.asc
+RUN apt-get install -y git && apt-get install wget -y
+RUN git clone "https://github.com/regis667/Xapo"
+WORKDIR Xapo
+RUN wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/SHA256SUMS.asc
+RUN wget https://bitcoincore.org/bin/bitcoin-core-0.21.0/bitcoin-0.21.0-x86_64-linux-gnu.tar.gz
+RUN chmod 755 setup.sh
+RUN ["chmod", "+x", "setup.sh"]
