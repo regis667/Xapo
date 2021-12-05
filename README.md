@@ -31,3 +31,24 @@ XAPO Tech tests <br />
 <br />
 **TASK #6**
 <br />
+There are few ways it could be done:
+&nbsp;&nbsp; **1:**  providing strings as environment variables via the -e argument or --env-file argument  to "docker run" : docker run ---env-file ./env.list <...> per environment, the list file might be different from env to env. 
+&nbsp;&nbsp; **2:** using 'secrets' from docker : 
+<br />
+printf "This is a secret" | docker secret create my_secret_data - 
+<br />
+docker service  create --name="redis" --secret="my_secret_data" redis:alpine,
+&nbsp;&nbsp; **3:** Mounting a file via '-v' paramterer a file with the passwords: 
+<br />
+echo "pass" > /root/configs/password.txt
+docker run -v /root/configs:/cfg  my_image 
+&nbsp;&nbsp; **4:**
+<br />
+Using 3-rd party solutions i.e AWS secretsmanager :
+<br />
+aws secretsmanager create-secret --name MyTestDatabaseSecret \
+    --description "My test database secret created with the CLI" \
+    --secret-string file://mycreds.json
+aws secretsmanager get-secret-value --secret-id MyTestDatabaseSecret --version-stage AWSPREVIOUS
+
+DOC:https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/index.html
