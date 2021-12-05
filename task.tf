@@ -4,7 +4,7 @@ resource "aws_ecs_task_definition" "xapo_task" {
   [
     {
       "name": "xapo_task",
-      "image": "xapo_docker_image",
+      "image": "xapo_docker_image_url_from_ECR",
       "essential": true,
       "portMappings": [
         {
