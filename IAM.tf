@@ -12,11 +12,11 @@ resource "aws_iam_role" "Xapo_role" {
          "AWS": [
            "arn:aws:iam::AWS-account-ID:user/user-name-1", 
            "arn:aws:iam::AWS-account-ID:user/user-name-2"
-  ]
-}
+				]
+					}
       },
-    ]
-  })
+				]
+								})
 
   tags = {
     tag-key = "tag-value"
