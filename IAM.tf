@@ -19,6 +19,6 @@ resource "aws_iam_role" "Xapo_role" {
 								})
 
   tags = {
-    tag-key = "xapo-test-role"
+    tag-key = "tag-value"
   }
 }
