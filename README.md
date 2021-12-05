@@ -26,4 +26,8 @@ XAPO Tech tests <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There is really no more to be said about this script, because it's just a textbook example form terraform site. The ' ( http://10.88.40.0/15 )' &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;part is strange, I think it should not be a part of the script. 
 <br />
 <br />
-**Task #5** is available as 
+**Task #5** is available as IAM.tf
+<br />
+<br />
+**TASK #6**
+<br />
