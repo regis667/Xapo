@@ -52,3 +52,8 @@ aws secretsmanager create-secret --name MyTestDatabaseSecret \ <br />
 aws secretsmanager get-secret-value --secret-id MyTestDatabaseSecret --version-stage AWSPREVIOUS <br />
 
 DOC:https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/index.html <br />
+<br />
+
+**Task #7** <br />
+First: I can use  AWS Direct Connect Console to directly connect to the instance, add new key and that's it - then with the new trusted key it will be possible to access the instace. <br />
+Second: More 'hardcore' way is to backup the EBS volume, turn off the machine, create new one and add mentioned EBS to the new machine. <br />
