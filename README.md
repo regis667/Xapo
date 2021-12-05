@@ -32,7 +32,7 @@ XAPO Tech tests <br />
 **TASK #6**
 <br />
 There are few ways it could be done: <br />
-&nbsp;&nbsp; **1:**  providing strings as environment variables via the -e argument or --env-file argument  to "docker run" : docker run ---env-file ./env.list <...> <br />  the list file might be different from env to env. 
+&nbsp;&nbsp; **1:**  providing strings as environment variables via the -e argument or --env-file argument  to "docker run" : docker run ---env-file ./env.list <...> <br />  the list file might be different from env to env.  <br />
 &nbsp;&nbsp; **2:** using 'secrets' from docker : <br />
 <br />
 printf "This is a secret" | docker secret create my_secret_data - <br />
