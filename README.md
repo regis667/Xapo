@@ -1,5 +1,5 @@
 # Xapo
-XAPO Tech tests \n
-Task #1 is in Dockerfile in this repo
-Task #2 is called task.tf
-Task #3 is called CI.yaml
+XAPO Tech tests <br />
+Task #1 is in Dockerfile in this repo <br /> 
+Task #2 is called task.tf <br />
+Task #3 is called CI.yaml <br />
