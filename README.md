@@ -31,7 +31,7 @@ XAPO Tech tests <br />
 <br />
 **TASK #6**
 <br />
-There are few ways it could be done:
+There are few ways it could be done: <br />
 &nbsp;&nbsp; **1:**  providing strings as environment variables via the -e argument or --env-file argument  to "docker run" : docker run ---env-file ./env.list <...> per environment, the list file might be different from env to env. 
 &nbsp;&nbsp; **2:** using 'secrets' from docker : 
 <br />
