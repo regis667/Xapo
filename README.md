@@ -32,23 +32,23 @@ XAPO Tech tests <br />
 **TASK #6**
 <br />
 There are few ways it could be done: <br />
-&nbsp;&nbsp; **1:**  providing strings as environment variables via the -e argument or --env-file argument  to "docker run" : docker run ---env-file ./env.list <...> per environment, the list file might be different from env to env. 
-&nbsp;&nbsp; **2:** using 'secrets' from docker : 
+&nbsp;&nbsp; **1:**  providing strings as environment variables via the -e argument or --env-file argument  to "docker run" : docker run ---env-file ./env.list <...> <br />  the list file might be different from env to env. 
+&nbsp;&nbsp; **2:** using 'secrets' from docker : <br />
 <br />
-printf "This is a secret" | docker secret create my_secret_data - 
+printf "This is a secret" | docker secret create my_secret_data - <br />
 <br />
-docker service  create --name="redis" --secret="my_secret_data" redis:alpine,
-&nbsp;&nbsp; **3:** Mounting a file via '-v' paramterer a file with the passwords: 
+docker service  create --name="redis" --secret="my_secret_data" redis:alpine, <br />
+&nbsp;&nbsp; **3:** Mounting a file via '-v' paramterer a file with the passwords:  <br />
 <br />
-echo "pass" > /root/configs/password.txt
-docker run -v /root/configs:/cfg  my_image 
-&nbsp;&nbsp; **4:**
+echo "pass" > /root/configs/password.txt <br />
+docker run -v /root/configs:/cfg  my_image  <br />
+&nbsp;&nbsp; **4:** <br />
 <br />
-Using 3-rd party solutions i.e AWS secretsmanager :
+Using 3-rd party solutions i.e AWS secretsmanager : <br />
 <br />
-aws secretsmanager create-secret --name MyTestDatabaseSecret \
-    --description "My test database secret created with the CLI" \
-    --secret-string file://mycreds.json
-aws secretsmanager get-secret-value --secret-id MyTestDatabaseSecret --version-stage AWSPREVIOUS
+aws secretsmanager create-secret --name MyTestDatabaseSecret \ <br />
+    --description "My test database secret created with the CLI" \ <br />
+    --secret-string file://mycreds.json <br />
+aws secretsmanager get-secret-value --secret-id MyTestDatabaseSecret --version-stage AWSPREVIOUS <br />
 
-DOC:https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/index.html
+DOC:https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/index.html <br />
